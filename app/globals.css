@@ -2,22 +2,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600&family=Share+Tech+Mono&display=swap');
 
 :root {
-  --imperial-black: #080a0e;
-  --imperial-dark: #0d1117;
-  --imperial-panel: #111820;
-  --imperial-border: #1e3a5f;
-  --imperial-glow: #1e90ff;
+  --imperial-black: #060810;
+  --imperial-dark:  #0d1117;
+  --imperial-panel: #0f1620;
+  --imperial-border: #1a3352;
+  --imperial-glow:   #1e90ff;
   --imperial-bright: #4db8ff;
-  --imperial-white: #c8dff0;
-  --imperial-red: #cc2200;
+  --imperial-white:  #d0e8f8;
+  --imperial-red:    #cc2200;
   --imperial-red-glow: #ff3300;
-  --text-dim: #4a6a8a;
-  --text-mid: #6a9aba;
-  --text-bright: #a0c8e8;
-  --scanline: rgba(0,30,60,0.15);
+  --text-dim:    #3d607e;
+  --text-mid:    #5a8aaa;
+  --text-bright: #92bcd8;
+  --scanline: rgba(0,20,50,0.12);
 }
 
-* { margin: 0; padding: 0; box-sizing: border-box; }
+*, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
 
 html, body {
   background: var(--imperial-black);
@@ -27,7 +33,7 @@ html, body {
   overflow-x: hidden;
 }
 
-/* Scanline overlay */
+/* Subtle scanline */
 body::before {
   content: '';
   position: fixed;
@@ -35,31 +41,37 @@ body::before {
   background: repeating-linear-gradient(
     0deg,
     transparent,
-    transparent 2px,
-    var(--scanline) 2px,
+    transparent 3px,
+    var(--scanline) 3px,
     var(--scanline) 4px
   );
   pointer-events: none;
   z-index: 9999;
-  opacity: 0.4;
+  opacity: 0.3;
 }
 
+/* ── Animations ── */
 @keyframes twinkle {
-  0%   { opacity: 0.6; }
-  100% { opacity: 1; }
+  0%   { opacity: 0.5; }
+  100% { opacity: 0.9; }
 }
 
 @keyframes emblem-pulse {
-  0%, 100% { filter: drop-shadow(0 0 10px rgba(30,144,255,0.4)); }
-  50%       { filter: drop-shadow(0 0 25px rgba(30,144,255,0.8)) drop-shadow(0 0 50px rgba(30,144,255,0.3)); }
+  0%, 100% { filter: drop-shadow(0 0 12px rgba(30,144,255,0.35)); }
+  50%       { filter: drop-shadow(0 0 28px rgba(30,144,255,0.75)) drop-shadow(0 0 56px rgba(30,144,255,0.25)); }
 }
 
 @keyframes blink {
   0%, 100% { opacity: 1; }
-  50%       { opacity: 0.3; }
+  50%       { opacity: 0.25; }
 }
 
 @keyframes spin {
   from { transform: rotate(0deg); }
   to   { transform: rotate(360deg); }
+}
+
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(16px); }
+  to   { opacity: 1; transform: translateY(0); }
 }
