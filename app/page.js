@@ -53,7 +53,7 @@ export default async function HomePage() {
 
         <div className="emblem-wrap"><ImperialEmblem size={120} /></div>
         <h1 className="hero-title">THE MALIN<br/>MADNESS</h1>
-        <p className="hero-sub">Imperial Family Databank &nbsp;·&nbsp; Est. 2025</p>
+        <p className="hero-sub">Imperial Family Databank &nbsp;·&nbsp; Est. 2026</p>
         <div className="hero-divider" />
 
         <div className="home-panels">
