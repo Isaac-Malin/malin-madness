@@ -301,7 +301,7 @@ export default async function HomePage() {
           <span className="hero-title-accent">Madness</span>
         </h1>
 
-        <p className="hero-sub">Est. 2025 &nbsp;·&nbsp; Authorized Access Only</p>
+        <p className="hero-sub">Est. 2026 &nbsp;·&nbsp; Authorized Access Only</p>
 
         {/* Divider */}
         <div className="hero-divider">
